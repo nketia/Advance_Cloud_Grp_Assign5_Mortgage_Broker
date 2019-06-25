@@ -1,4 +1,4 @@
-# ass-5
+# assignment-5
 
 a [Sails v1](https://sailsjs.com) application
 
@@ -14,12 +14,10 @@ a [Sails v1](https://sailsjs.com) application
 
 ### Version info
 
-This app was originally generated on Mon Jun 24 2019 17:27:50 GMT-0300 (Atlantic Daylight Time) using Sails v1.2.2.
+This app was originally generated on Tue Jun 25 2019 13:11:48 GMT-0300 (Atlantic Daylight Time) using Sails v1.2.2.
 
 <!-- Internally, Sails used [`sails-generate@1.16.8`](https://github.com/balderdashy/sails-generate/tree/v1.16.8/lib/core-generators/new). -->
 
-
-This project's boilerplate is based on an expanded seed app provided by the [Sails core team](https://sailsjs.com/about) to make it easier for you to build on top of ready-made features like authentication, enrollment, email verification, and billing.  For more information, [drop us a line](https://sailsjs.com/support).
 
 
 <!--

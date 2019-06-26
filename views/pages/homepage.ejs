@@ -34,10 +34,8 @@
                 <p class="card-text">Fill up the form below to get a line of credit approved</p>
 
                 <div class="input-group">
-                  <input type="text" name="name" id="name" placeholder="Full Name" class="form-control" required>
-                  <div class="input-group-append">
-                    <button class="btn btn-dark" type="button" disabled>Emily Watson&nbsp;&nbsp;</button>
-                  </div>
+                  <input type="text" name="fname" id="fname" placeholder="First Name" class="form-control" required>&ensp;&ensp;
+                  <input type="text" name="lname" id="lname" placeholder="Last Name" class="form-control" required>
                 </div><br>
                 
                 <div class="input-group">
@@ -55,22 +53,30 @@
                 </div><br>
                 
                 <div class="input-group">
-                  <input type="text" name="email" id="email" placeholder="Company Email" class="form-control" required>
+                  <input type="email" name="email" id="email" placeholder="Company Email" class="form-control" required>
                   <div class="input-group-append">
                     <button class="btn btn-dark" type="button" disabled>abcd@pb.com</button>
                   </div>
                 </div><br>
-                
+
                 <div class="input-group">
-                  <input type="number" step="1" min="1" name="salary" id="salary" placeholder="Current gross annual drawing salary" class="form-control" required>
+                  <input type="number" min="1000000000" max="9999999999" step="1" name="phone" id="phone" placeholder="Phone Number" class="form-control" required>
                   <div class="input-group-append">
-                    <button class="btn btn-dark" type="button" disabled>82550</button>
+                    <button class="btn btn-dark" type="button" disabled>9022223654&nbsp;&nbsp;</button>
                   </div>
+                </div><br>
+
+
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-dark" type="button" disabled>CA $</button>
+                  </div>
+                  <input type="number" step="1" min="1" name="mortgage" id="mortgage" placeholder="Mortgage Amount Requested" class="form-control" required>
                 </div><br>
                 
                 <button class="btn btn-success" onclick="submit_form()" type="submit">Submit</button>
               </div>
-              <div class="card-footer text-muted">Average approval time: 22 hrs</div>
+              <div class="card-footer text-muted">Loan Reference ID:</div>
             </div>
           </form>
         </div>
@@ -97,6 +103,7 @@
       </div>
     </div>
 
+    <br><br><br><br>
     <footer id="footer" class="footer-fixed">
       <div class="container">
         <div class="alert alert-info">

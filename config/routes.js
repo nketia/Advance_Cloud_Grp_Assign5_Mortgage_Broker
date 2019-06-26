@@ -20,6 +20,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
+  '/BrokerMortgageController/createLoan_805' : 'BrokerMortgageController.createLoan_805'
 
 
   /***************************************************************************

@@ -33,7 +33,17 @@ module.exports.datastores = {
   ***************************************************************************/
 
   default: {
-
+    adapter: 'sails-mysql',
+    host:"localhost",
+    port:3306,
+    user:"user",
+    password:"password",
+    //Azure DB Connection
+    //host:"assignement4-613.mysql.database.azure.com",
+    //user:"waliaCS@assignement4-613",
+    //password:"Walia14$",
+    database:"assignment5_grp10",
+    connectTimeout: 20000
     /***************************************************************************
     *                                                                          *
     * Want to use a different database during development?                     *

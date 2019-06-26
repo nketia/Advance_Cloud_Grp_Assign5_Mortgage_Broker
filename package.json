@@ -13,7 +13,11 @@
     "sails-hook-grunt": "^3.1.0",
     "sails-hook-orm": "^2.1.1",
     "sails-hook-sockets": "^1.5.5",
+<<<<<<< HEAD
     "sails-mysql": "1.0.1"
+=======
+    "sails-mysql": "^1.0.1"
+>>>>>>> fc0d50a6fbd0d0698fbba7dc3b86c28af9dccbe7
   },
   "devDependencies": {
     "@sailshq/eslint": "^4.19.3"

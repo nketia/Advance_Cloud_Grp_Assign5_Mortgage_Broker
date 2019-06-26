@@ -30,7 +30,7 @@ module.exports = {
           }
           res.send({ regSuccess: "success" });
         });
-  
+    },
 
 };
 

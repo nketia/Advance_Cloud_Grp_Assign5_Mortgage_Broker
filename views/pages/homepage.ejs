@@ -17,6 +17,21 @@
     </style>
 
 <script>
+
+  function stat(){
+        var id=$("#wref").val();
+        var request = new XMLHttpRequest()
+        request.open('GET','http://localhost:1337/BrokerMortgage/find?id='+id,true)
+        request.onload = function()
+        {
+          var data = JSON.parse(this.response)
+          data.forEach(element => {
+            $("#modstatus").append("Mortgage ID: "+ element.id + " and Status is: " + element.status);
+          });
+        }
+        request.send()
+  }
+
   $(document).ready(function(){
     $("#apply4Mortgage").click(function(){
       var form_firstname=$("#fname").val();
@@ -57,6 +72,7 @@
       });
     });
   });
+  
   </script>
   </head>
 
@@ -138,7 +154,7 @@
                     <button class="btn btn-dark" type="button" disabled>wref-xxxx-abcd-xxxx</button>
                   </div>
                 </div><br>
-                <a href="#" class="btn btn-primary">Submit</a>
+                <a href="#" class="btn btn-success" id="checkMortStatus" onclick='stat()'>Submit</a>
               </div>
               <div id="modstatus" class="card-footer text-muted"> </div>
             </div>

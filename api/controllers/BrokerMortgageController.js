@@ -9,7 +9,7 @@ module.exports = {
 
     createLoan_805: function (req, res) {
 
-        var id = req.body.submitted_cusId;  //getting the customerID input ny the user
+       // var id = req.body.submitted_cusId;  //getting the customerID input ny the user
     
         var firstName = req.body.submitted_firstname; // getting the First Name input by the user
     
@@ -22,9 +22,9 @@ module.exports = {
         var mortgageAmount = req.body.submitted_amount;
     
         
-        sails.log(firstName); BrokerMortgage.create({ id:id, firstName: firstName,
+        sails.log(firstName); BrokerMortgage.create({ firstName: firstName,
         lastName: lastName, address: address, phone: phone,
-        employerName:employerName, employeeEmail:employeeEmail, mortgageAmount:mortgageAmount}).exec(function (err) {   if (err) { res.send( {
+        employerName:employerName, employeeEmail:employeeEmail, mortgageAmount:mortgageAmount,status:'Pending'}).exec(function (err) {   if (err) { res.send( {
         error: 'Database error inserting into table' });
     
           }

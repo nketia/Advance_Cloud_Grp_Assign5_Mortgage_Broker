@@ -8,12 +8,6 @@
 module.exports = {
 
   attributes: {
-
-    id: {
-      type: 'string',
-      required:true,
-      columnName:'mortgageId'
-    },
     firstName : {
       type: 'string',
       required:true

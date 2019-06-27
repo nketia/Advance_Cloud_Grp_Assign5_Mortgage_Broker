@@ -19,7 +19,6 @@
 <script>
   $(document).ready(function(){
     $("#apply4Mortgage").click(function(){
-      // $("#calBMI").empty()
       var form_firstname=$("#fname").val();
       var form_lastname=$("#lname").val();
       var form_address=$("#address").val();
@@ -32,7 +31,6 @@
   
       $.post("http://localhost:1337/BrokerMortgageController/createLoan_805",
       {
-        submitted_cusId: '5',
         submitted_firstname: form_firstname,
         submitted_lastname: form_lastname,
         submitted_address: form_address,
@@ -43,7 +41,17 @@
         
       },
       function(data, status){
-        $("#feedback").append("Resgistration was: "+ data['regSuccess']);
+        $("#feedback").append(data['regSuccess']);
+        var request = new XMLHttpRequest()
+        request.open('GET','http://localhost:1337/BrokerMortgage/find?employeeEmail='+form_email,true)
+        request.onload = function()
+        {
+          var data = JSON.parse(this.response)
+          data.forEach(element => {
+            $("#modstatus").append("Mortgage ID: "+ element.id + " and Status is: " + element.status);
+          });
+        }
+        request.send()
         $("#dataform")[0].reset();
         
       });
@@ -132,7 +140,7 @@
                 </div><br>
                 <a href="#" class="btn btn-primary">Submit</a>
               </div>
-              <div class="card-footer text-muted">Status: </div>
+              <div id="modstatus" class="card-footer text-muted"> </div>
             </div>
           </form>
         </div>

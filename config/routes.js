@@ -21,8 +21,8 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
   'get /login': { view: 'pages/employerlogin' },
-  'get /employer': { view: 'pages/employerhome' },
-  'get /employerform': { view: 'pages/applicationform' },
+  '/employerhome': { view: 'pages/employerhome' },
+  '/applicationform': { view: 'pages/applicationform' },
   '/BrokerMortgageController/createLoan_805' : 'BrokerMortgageController.createLoan_805'
 
 

@@ -1,6 +1,20 @@
+/**
+ * Datastores
+ * (sails.config.datastores)
+ *
+ * A set of datastore configurations which tell Sails where to fetch or save
+ * data when you execute built-in model methods like `.find()` and `.create()`.
+ *
+ *  > This file is mainly useful for configuring your development database,
+ *  > as well as any additional one-off databases used by individual models.
+ *  > Ready to go live?  Head towards `config/env/production.js`.
+ *
+ * For more information on configuring datastores, check out:
+ * https://sailsjs.com/config/datastores
+ */
+
 module.exports.datastores = {
 
-<<<<<<< HEAD
 
   /***************************************************************************
   *                                                                          *
@@ -50,10 +64,3 @@ module.exports.datastores = {
 
 
 };
-=======
-  default: {
-    adapter: 'sails-mysql',
-    url: 'mysql://singh2@assignment998:Mani12345@assignment998.mysql.database.azure.com:3306/assignment5_grp10',
- },
-};
->>>>>>> fc0d50a6fbd0d0698fbba7dc3b86c28af9dccbe7

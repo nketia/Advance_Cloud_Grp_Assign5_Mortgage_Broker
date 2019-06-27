@@ -20,12 +20,7 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/homepage' },
-<<<<<<< HEAD
   '/BrokerController/createLoan_805':  'BrokerController.createLoan_805',
-=======
-  '/employer': { view: 'pages/employerhome' },
-  '/BrokerMortgageController/createLoan_805' : 'BrokerMortgageController.createLoan_805'
->>>>>>> fc0d50a6fbd0d0698fbba7dc3b86c28af9dccbe7
 
 
   /***************************************************************************

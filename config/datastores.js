@@ -32,7 +32,7 @@ module.exports.datastores = {
   *                                                                          *
   ***************************************************************************/
 
-
+  default: {
 
     /***************************************************************************
     *                                                                          *
@@ -50,15 +50,6 @@ module.exports.datastores = {
     ***************************************************************************/
     // adapter: 'sails-mysql',
     // url: 'mysql://user:password@host:port/database',
-
-    sailsmysql: {
-
-    adapter: "sails-mysql",
-    host: "localhost",
-    port: 3306,
-    user: "root",
-    password: "root",
-    database: "cloud_db"
 
   },
 

@@ -22,6 +22,32 @@
       text-align: center;
     }
   </style>
+
+  <script>
+function abc(){
+      var email=$("#email").val();
+      var salary;
+      var request = new XMLHttpRequest()
+      request.open('GET','http://assignment5grp10.azurewebsites.net/Employer/find?employeeEmail='+email,true)
+      request.onload = function(){
+        var data = JSON.parse(this.response)
+         data.forEach(element => {
+           salary = element.salary
+         });
+        }
+        if(salary>=50000)
+        {
+
+        }
+        else
+        {
+          
+        }
+        request.send()
+      }
+
+
+  </script>
 </head>
 <body style="background-color: lightgray">
 
@@ -63,7 +89,7 @@
                 <p class="card-text">Fill up the form below to get a line of credit approved</p>
 
                 <div class="input-group">
-                  <input type="text" name="name" id="name" placeholder="Full Name" class="form-control" required>
+                  <input type="email" name="email" id="email" placeholder="Email" class="form-control" required>
                   <div class="input-group-append">
                     <button class="btn btn-dark" type="button" disabled>Emily Watson&nbsp;&nbsp;</button>
                   </div>
@@ -84,8 +110,8 @@
                     <div class="invalid-feedback">Check this checkbox to continue.</div>
                   </label>
                 </div>
-                
-                <button class="btn btn-success" onclick="submit_form()" type="submit">Submit</button>
+                <button class="btn btn-success" id="checkMortStatus" type="button" onclick='abc()'>Submit</button>
+          <!-- <a href="#" class="btn btn-success" onclick="abc()" type="submit">Submit</button> -->
               </div>
               <div class="card-footer text-muted"><strong>© Employer Inc. &nbsp; &nbsp; 2019</div>
             </div>

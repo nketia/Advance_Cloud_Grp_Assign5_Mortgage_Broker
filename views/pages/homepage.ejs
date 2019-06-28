@@ -39,6 +39,7 @@
 
   $(document).ready(function(){
     $("#apply4Mortgage").click(function(){
+      
       var form_firstname=$("#fname").val();
       var form_lastname=$("#lname").val();
       var form_address=$("#address").val();
@@ -46,6 +47,10 @@
       var form_email=$("#email").val();
       var form_phone=$("#phone").val();
       var form_amount=$("#mortgage").val();
+
+      // if($(("#mortgage"==null)||("#fname"==null)||("#lname"==null)||("#address"==null)||("#cname"==null)||("#email"==null)||("#phone"===null))){
+      //   $("#feedback").html("Incomplete form!");
+      // }
   
       $.post("http://localhost:1337/BrokerMortgageController/createLoan_805",{
         submitted_firstname: form_firstname,
@@ -86,7 +91,7 @@
       <div class="row">
 
         <div class="col-sm">
-          <form id="dataform">
+          <form id="dataform" onkeydown="return event.key != 'Enter';">
             <div class="card text-center">
               <div class="card-header">Form Annexure W-I</div>
               <div class="card-body">
@@ -94,33 +99,33 @@
                 <p class="card-text">Fill up the form below to get a line of credit approved</p>
 
                 <div class="input-group">
-                  <input type="text" name="fname" id="fname" placeholder="First Name" class="form-control" required>&ensp;&ensp;
-                  <input type="text" name="lname" id="lname" placeholder="Last Name" class="form-control" required>
+                  <input type="text" name="fname" id="fname" placeholder="First Name" class="form-control" required/>&ensp;&ensp;
+                  <input type="text" name="lname" id="lname" placeholder="Last Name" class="form-control" required/>
                 </div><br>
                 
                 <div class="input-group">
-                  <input type="text" name="address" id="address" placeholder="Current living Address" class="form-control" required>
+                  <input type="text" name="address" id="address" placeholder="Current living Address" class="form-control" required/>
                   <div class="input-group-append">
                     <button class="btn btn-dark" type="button" disabled>Type to select&nbsp;</button>
                   </div>
                 </div><br>
 
                 <div class="input-group">
-                  <input type="text" name="cname" id="cname" placeholder="Current Employer Name" class="form-control" required>
+                  <input type="text" name="cname" id="cname" placeholder="Current Employer Name" class="form-control" required/>
                   <div class="input-group-append">
                     <button class="btn btn-dark" type="button" disabled>Pitney Bowes&nbsp;&nbsp;</button>
                   </div>
                 </div><br>
                 
                 <div class="input-group">
-                  <input type="email" name="email" id="email" placeholder="Company Email" class="form-control" required>
+                  <input type="email" name="email" id="email" placeholder="Company Email" class="form-control" required/>
                   <div class="input-group-append">
                     <button class="btn btn-dark" type="button" disabled>abcd@pb.com</button>
                   </div>
                 </div><br>
 
                 <div class="input-group">
-                  <input type="number" min="1000000000" max="9999999999" step="1" name="phone" id="phone" placeholder="Phone Number" class="form-control" required>
+                  <input type="number" min="1000000000" max="9999999999" step="1" name="phone" id="phone" placeholder="Phone Number" class="form-control" required/>
                   <div class="input-group-append">
                     <button class="btn btn-dark" type="button" disabled>9022223654&nbsp;&nbsp;</button>
                   </div>
@@ -131,10 +136,10 @@
                   <div class="input-group-prepend">
                     <button class="btn btn-dark" type="button" disabled>CA $</button>
                   </div>
-                  <input type="number" step="1" min="1" name="mortgage" id="mortgage" placeholder="Mortgage Amount Requested" class="form-control" required>
+                  <input type="number" step="1" min="1" name="mortgage" id="mortgage" placeholder="Mortgage Amount Requested" class="form-control" required/>
                 </div><br>
                 
-                <button class="btn btn-success" id="apply4Mortgage" type="button">Submit</button>
+                <button class="btn btn-success" id="apply4Mortgage" type="submit">Submit</button>
               </div>
               <div class="card-footer text-muted"><a id="feedback"></a></div>
             </div>
@@ -142,19 +147,19 @@
         </div>
 
         <div class="col-sm">
-          <form>
+          <form onkeydown="return event.key != 'Enter';">
             <div class="card text-center">
               <div class="card-header">Form Annexure W-II</div>
               <div class="card-body">
                 <h5 class="card-title">Loan Status Check</h5>
                 <p class="card-text">Enter your unique reference number generated by Annexure W-I below to see the status of your application</p>
                 <div class="input-group">
-                  <input type="text" name="wref" id="wref" placeholder="Loan Reference #ID" class="form-control" required>
+                  <input type="text" name="wref" id="wref" placeholder="Loan Reference #ID" class="form-control" required/>
                   <div class="input-group-append">
-                    <button class="btn btn-dark" type="button" disabled>wref-xxxx-abcd-xxxx</button>
+                    <button class="btn btn-dark" type="button" id="wref_status" disabled>wref-xxxx-abcd-xxxx</button>
                   </div>
                 </div><br>
-                <a href="#" class="btn btn-success" id="checkMortStatus" onclick='stat()'>Submit</a>
+                <button class="btn btn-success" id="checkMortStatus" type="button" onclick='stat()'>Submit</button>
               </div>
               <div id="modstatus" class="card-footer text-muted"> </div>
             </div>

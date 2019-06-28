@@ -18,7 +18,6 @@ module.exports = {
         var employerName = req.body.submitted_employer;
         var employeeEmail = req.body.submitted_email;
         var mortgageAmount = req.body.submitted_amount;
-    
         
         sails.log(firstName); BrokerMortgage.create({ firstName: firstName,
         lastName: lastName, address: address, phone: phone,

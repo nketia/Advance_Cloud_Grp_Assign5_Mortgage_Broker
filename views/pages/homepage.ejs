@@ -37,7 +37,7 @@
   function stat(){
         var id=$("#wref").val();
         var request = new XMLHttpRequest()
-        request.open('GET','http://localhost:1337/BrokerMortgage/find?id='+id,true)
+        request.open('GET','http://assignment5grp10.azurewebsites.net/BrokerMortgage/find?id='+id,true)
         request.onload = function(){
           var data = JSON.parse(this.response)
           if(!$.trim(data)){
@@ -67,7 +67,7 @@
       var form_phone=$("#phone").val();
       var form_amount=$("#mortgage").val();
         
-      $.post("http://localhost:1337/BrokerMortgageController/createLoan_805",{
+      $.post("http://assignment5grp10.azurewebsites.net/BrokerMortgageController/createLoan_805",{
         submitted_firstname: form_firstname,
         submitted_lastname: form_lastname,
         submitted_address: form_address,
@@ -80,7 +80,7 @@
       function(data, status){
         $("#feedback").html(data['regSuccess']);
         var request = new XMLHttpRequest()
-        request.open('GET','http://localhost:1337/BrokerMortgage/find?employeeEmail='+form_email,true)
+        request.open('GET','http://assignment5grp10.azurewebsites.net/BrokerMortgage/find?employeeEmail='+form_email,true)
         request.onload = function(){
           var data = JSON.parse(this.response)
           data.forEach(element => {

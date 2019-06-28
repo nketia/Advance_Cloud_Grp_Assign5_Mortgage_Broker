@@ -36,14 +36,14 @@
         var username=$("#uname").val();
         var password=$("#pwd").val();
         $.ajax({
-        url:'http://localhost:1337/employer/find',
+        url:'http://assignment5grp10.azurewebsites.net/employer/find',
         method: 'GET',
         data: {employeeEmail: username,employeepwd:password},
         dataType: 'json',
         success: function(response){
           if(null!=response && response.length>0){
             console.log("Login Successful");
-            window.location = "http://localhost:1337/employerhome";
+            window.location = "http://assignment5grp10.azurewebsites.net/employerhome";
           }
           else{
             console.log("Invalid Login");
@@ -79,7 +79,7 @@
 </nav>
 <br>
 
-<div class="jumbotron"">
+<div class="jumbotron">
   <br>
   <h1 class="display-2"> <strong> Employee Login </strong></h1>
 </div>
@@ -113,6 +113,3 @@
 
 </body>
 </html>
-
-
-

@@ -24,9 +24,12 @@ module.exports = {
         lastName: lastName, address: address, phone: phone,
         employerName:employerName, employeeEmail:employeeEmail, mortgageAmount:mortgageAmount,status:'Pending'}).exec(
         function (err){
-            if (err) 
-            { res.send( { error: 'Database error inserting into table' }); }
-        res.send({ regSuccess: "Application Submitted with success"});
+            if (err) { 
+                console.log("Error inserting data");
+                res.send( { error: 'Database error inserting into table' }); 
+            }
+            console.log("Request submitted sucessfully");
+            res.send({ regSuccess: "Application Submitted with success"});
         });
     },
 

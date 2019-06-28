@@ -42,13 +42,16 @@
         dataType: 'json',
         success: function(response){
           if(null!=response && response.length>0){
+            console.log("Login Successful");
             window.location = "http://localhost:1337/employerhome";
           }
           else{
+            console.log("Invalid Login");
             alert('Invalid Login');
           }
         },
         error: function(err){
+          console.log("Please check your input");
           alert('Please check your input...');
         }
       });

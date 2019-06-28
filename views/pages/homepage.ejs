@@ -14,7 +14,22 @@
         position: fixed;
         bottom: 0;
         width: 100%
-}
+      }
+        body, html {
+        height: 100%;
+      }
+      .bg { 
+        /* The image used */
+        background-image: url("https://i0.wp.com/lilar.com/wp-content/uploads/2016/10/Savin-NY-Website-Background-Web.jpg?ssl=1");
+
+        /* Full height */
+        height: 100%; 
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
     </style>
 
 <script>
@@ -39,7 +54,11 @@
 
   $(document).ready(function(){
     $("#apply4Mortgage").click(function(){
-      
+
+      if($(("#mortgage"==null)||("#fname"==null)||("#lname"==null)||("#address"==null)||("#cname"==null)||("#email"==null)||("#phone"===null))){
+        $("#feedback").html("Incomplete form!");
+      }
+
       var form_firstname=$("#fname").val();
       var form_lastname=$("#lname").val();
       var form_address=$("#address").val();
@@ -47,11 +66,7 @@
       var form_email=$("#email").val();
       var form_phone=$("#phone").val();
       var form_amount=$("#mortgage").val();
-
-      // if($(("#mortgage"==null)||("#fname"==null)||("#lname"==null)||("#address"==null)||("#cname"==null)||("#email"==null)||("#phone"===null))){
-      //   $("#feedback").html("Incomplete form!");
-      // }
-  
+        
       $.post("http://localhost:1337/BrokerMortgageController/createLoan_805",{
         submitted_firstname: form_firstname,
         submitted_lastname: form_lastname,
@@ -83,10 +98,10 @@
 
   <body>
     <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand mx-auto" href="/">Warrior Mortgage Inc. 2019</a>
+      <a class="navbar-brand mx-auto" href="/">Warrior Mortgage</a>
     </nav>
     <br><br><br>
-    
+    <div class="bg">
     <div class="container">
       <div class="row">
 
@@ -139,7 +154,7 @@
                   <input type="number" step="1" min="1" name="mortgage" id="mortgage" placeholder="Mortgage Amount Requested" class="form-control" required/>
                 </div><br>
                 
-                <button class="btn btn-success" id="apply4Mortgage" type="submit">Submit</button>
+                <button class="btn btn-success" id="apply4Mortgage" type="button">Submit</button>
               </div>
               <div class="card-footer text-muted"><a id="feedback"></a></div>
             </div>
@@ -168,5 +183,6 @@
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  </body>
+  </div>
+</body>
 </html>

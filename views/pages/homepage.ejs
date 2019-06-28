@@ -23,12 +23,16 @@
         var id=$("#wref").val();
         var request = new XMLHttpRequest()
         request.open('GET','http://localhost:1337/BrokerMortgage/find?id='+id,true)
-        request.onload = function()
-        {
+        request.onload = function(){
           var data = JSON.parse(this.response)
-          data.forEach(element => {
-            $("#modstatus").append("Mortgage ID: "+ element.id + " and Status is: " + element.status);
-          });
+          if(!$.trim(data)){
+            $("#modstatus").html("Mortgage ID does not exist!");
+          }
+          else{
+            data.forEach(element =>{
+              $("#modstatus").html("Mortgage ID: "+ element.id + "&ensp;&ensp; Status: " + element.status);
+            });
+          }
         }
         request.send()
   }
@@ -42,11 +46,8 @@
       var form_email=$("#email").val();
       var form_phone=$("#phone").val();
       var form_amount=$("#mortgage").val();
-     
-      
   
-      $.post("http://localhost:1337/BrokerMortgageController/createLoan_805",
-      {
+      $.post("http://localhost:1337/BrokerMortgageController/createLoan_805",{
         submitted_firstname: form_firstname,
         submitted_lastname: form_lastname,
         submitted_address: form_address,
@@ -54,22 +55,20 @@
         submitted_email: form_email,
         submitted_pnumber: form_phone,
         submitted_amount: form_amount
-        
       },
+
       function(data, status){
-        $("#feedback").append(data['regSuccess']);
+        $("#feedback").html(data['regSuccess']);
         var request = new XMLHttpRequest()
         request.open('GET','http://localhost:1337/BrokerMortgage/find?employeeEmail='+form_email,true)
-        request.onload = function()
-        {
+        request.onload = function(){
           var data = JSON.parse(this.response)
           data.forEach(element => {
-            $("#modstatus").append("Mortgage ID: "+ element.id + " and Status is: " + element.status);
+            $("#modstatus").html("Mortgage ID: "+ element.id + "&ensp;&ensp; Status: " + element.status);
           });
         }
         request.send()
         $("#dataform")[0].reset();
-        
       });
     });
   });
@@ -137,7 +136,7 @@
                 
                 <button class="btn btn-success" id="apply4Mortgage" type="button">Submit</button>
               </div>
-              <div class="card-footer text-muted"><p id="feedback"></p></div>
+              <div class="card-footer text-muted"><a id="feedback"></a></div>
             </div>
           </form>
         </div>

@@ -26,10 +26,10 @@ module.exports = {
         function (err){
             if (err) { 
                 console.log("Error inserting data");
-                res.send( { error: 'Database error inserting into table' }); 
+                res.send( { error: "Database Error: Could not insert into table" }); 
             }
             console.log("Request submitted sucessfully");
-            res.send({ regSuccess: "Application Submitted with success"});
+            res.send({ regSuccess: "Application was submitted successfully!"});
         });
     },
 

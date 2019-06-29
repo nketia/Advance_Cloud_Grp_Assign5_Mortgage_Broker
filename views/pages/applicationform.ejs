@@ -41,13 +41,11 @@ function fetch_salary(){
         var request2 = new XMLHttpRequest();
         request2.open('PUT','http://assignment5grp10.azurewebsites.net/BrokerMortgage/'+mortId+'?status=Approved',false);
         request2.send();
-      }
-        else
-        {
+        }else{
         var request2 = new XMLHttpRequest();
         request2.open('PUT','http://assignment5grp10.azurewebsites.net/BrokerMortgage/'+mortId+'?status=Rejected',false);
         request2.send();
-      }
+        }
       request.send();
       }
 
@@ -121,9 +119,5 @@ function fetch_salary(){
           </form>
         </div>
 </div>
-
 </body>
 </html>
-
-
-
